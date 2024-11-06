@@ -178,6 +178,6 @@ run ``` SELECT * FROM youtube_videos; ```
 
 ## 3. CSV File for Non-Python/Postgres Users:
 
-You can analyze the data using [youtube_data.csv](https://github.com/Tran1595/YouTubeAnalytics/blob/main/ytb_db.csv) in Excel or Google Sheets.
+You can analyze the data using [youtube_data.csv](https://github.com/Tran1595/YouTubeAnalytics/blob/main/20241028_ytb_db.csv) in Excel or Google Sheets.
 
 
