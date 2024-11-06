@@ -1,5 +1,8 @@
 
-# This repository provides an analysis of viral YouTube videos:
+# This repository provides technical aspects for analyzng viral YouTube videos:
+
+- YouTube API Tutorial: For more detailed steps on using the YouTube API, check out this [YouTube API Docs](https://developers.google.com/youtube/v3/getting-started) and [YouTube API Key](https://www.youtube.com/watch?v=DuudSp4sHmg&t=137s), [YouTube API for Python](https://www.youtube.com/watch?v=D56_Cx36oGY&t=811s).
+- We'll cover:
 
 1. Fetching Data with Python and YouTube API.
 
@@ -170,5 +173,5 @@ CREATE TABLE youtube_videos (
 
 ## 3. CSV File for Non-Python/Postgres Users:
 
-
+You can analyze the data using [youtube_data.csv](https://github.com/Tran1595/YouTubeAnalytics/blob/main/ytb_db.csv) in Excel or Google Sheets.
 
