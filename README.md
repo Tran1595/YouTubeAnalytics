@@ -1,19 +1,21 @@
+# Extracting YouTube Data and Structuring PgAdmin Tables
+### This repository provides technical steps for analyzing viral YouTube videos:
 
-# This repository provides technical aspects for analyzng viral YouTube videos:
-
-- YouTube API Tutorial: For more detailed steps on using the YouTube API, check out this [YouTube API Docs](https://developers.google.com/youtube/v3/getting-started) and [YouTube API Key](https://www.youtube.com/watch?v=DuudSp4sHmg&t=137s), [YouTube API for Python](https://www.youtube.com/watch?v=D56_Cx36oGY&t=811s).
-- We'll cover:
-
-1. Fetching Data with Python and YouTube API.
-
-2. Creating a Table in PgAdmin.
-
-3. Providing the CSV File for Non-Python/Postgres Users.
+- YouTube API Tutorial: For more detailed steps on using the YouTube API, check out this [YouTube API Docs](https://developers.google.com/youtube/v3/getting-started)
+  and [YouTube API Key](https://www.youtube.com/watch?v=DuudSp4sHmg&t=137s), [YouTube API for Python](https://www.youtube.com/watch?v=D56_Cx36oGY&t=811s).
+- Note: This repository does not provide SQL for analysis. Please conduct your own analysis based on the provided data.
+- Here are covered steps:
+   1. Fetching Data with Python and YouTube API.
+   2. Creating a Table in PgAdmin. (I used Pycharm, and it doesn't support SQL)
+   3. Providing the CSV File for Non-Python/Postgres Users.
    
 
 ## 1. Fetching Data with Python and YouTube API
 
-First, make sure you have the necessary Python packages installed:
+First, make sure you have the necessary Python packages installed, for example psycopg2:
+
+(_You will probably need to install more packages if encounter errors when running the code_)
+
 ```bash
 pip install google-api-python-client pandas psycopg2
 ```
@@ -174,4 +176,5 @@ CREATE TABLE youtube_videos (
 ## 3. CSV File for Non-Python/Postgres Users:
 
 You can analyze the data using [youtube_data.csv](https://github.com/Tran1595/YouTubeAnalytics/blob/main/ytb_db.csv) in Excel or Google Sheets.
+
 
