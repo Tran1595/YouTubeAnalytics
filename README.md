@@ -5,12 +5,31 @@
   and [YouTube API Key](https://www.youtube.com/watch?v=DuudSp4sHmg&t=137s), [YouTube API for Python](https://www.youtube.com/watch?v=D56_Cx36oGY&t=811s).
 - Note: This repository does not provide SQL for analysis. Please conduct your own analysis based on the provided data.
 - Here are covered steps:
-   1. Fetching Data with Python and YouTube API.
-   2. Creating a Table in PgAdmin. (I used Pycharm, and it doesn't support SQL)
+   1. Creating a Table in PgAdmin. (I used Pycharm, and it doesn't support SQL)
+   2. Fetching Data with Python and YouTube API.
    3. Providing the CSV File for Non-Python/Postgres Users.
    
 
-## 1. Fetching Data with Python and YouTube API
+## 1. Creating a Table in PgAdmin
+Assuming you have PostgreSQL and PgAdmin set up, here’s the SQL script to create the table:
+
+```bash
+CREATE TABLE youtube_videos (
+    title TEXT NOT NULL,
+    category_name TEXT NOT NULL,
+    view_count INTEGER NOT NULL,
+    like_count INTEGER NOT NULL,
+    comment_count INTEGER NOT NULL,
+    published_at TIMESTAMP NOT NULL,
+    thumbnail_url TEXT NOT NULL,
+    tags TEXT NOT NULL,
+    subscriber_count INTEGER NOT NULL,
+    video_count INTEGER NOT NULL,
+    is_weekend BOOLEAN NOT NULL,
+    video_length INTEGER NOT NULL
+);
+```
+## 2. Fetching Data with Python and YouTube API
 
 First, make sure you have the necessary Python packages installed, for example psycopg2:
 
@@ -124,6 +143,8 @@ def fetch_and_store_videos(page_token=None, videos_fetched=0):
             print(f"Error fetching channel data: {e}")
             subscriber_count = 0
             video_count = 0
+
+# INSERT DATA TO POSTGRES TABLE, THE TABLE SHOULD ALREADY BEEN CREATED.
         try:
             cursor.execute('''
                             INSERT INTO youtube_videos (title, category_name, view_count, like_count, comment_count,
@@ -152,26 +173,8 @@ cursor.close()
 conn.close()
 ```
 
-
-## 2. Creating a Table in PgAdmin
-Assuming you have PostgreSQL and PgAdmin set up, here’s the SQL script to create the table:
-
-```bash
-CREATE TABLE youtube_videos (
-    title TEXT NOT NULL,
-    category_name TEXT NOT NULL,
-    view_count INTEGER NOT NULL,
-    like_count INTEGER NOT NULL,
-    comment_count INTEGER NOT NULL,
-    published_at TIMESTAMP NOT NULL,
-    thumbnail_url TEXT NOT NULL,
-    tags TEXT NOT NULL,
-    subscriber_count INTEGER NOT NULL,
-    video_count INTEGER NOT NULL,
-    is_weekend BOOLEAN NOT NULL,
-    video_length INTEGER NOT NULL
-);
-```
+To confirm the data has been successfully inserted, run the following SQL query in PgAdmin:
+run ``` SELECT * FROM youtube_videos; ```
 
 ## 3. CSV File for Non-Python/Postgres Users:
 
